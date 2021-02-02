@@ -1,0 +1,50 @@
+GitHub access token: e322ebba1034b17853be3827823957f5a44d8e9e 
+
+
+Accept: application/vnd.github.v3+json
+
+Schema
+All API access is over HTTPS, and accessed from https://api.github.com. All data is sent and received as JSON.
+
+$ curl -I https://api.github.com/users/octocat/orgs
+
+> HTTP/1.1 200 OK
+> Server: nginx
+> Date: Fri, 12 Oct 2012 23:33:14 GMT
+> Content-Type: application/json; charset=utf-8
+> Status: 200 OK
+> ETag: "a00049ba79152d03380c34652f2cb612"
+> X-GitHub-Media-Type: github.v3
+> X-RateLimit-Limit: 5000
+> X-RateLimit-Remaining: 4987
+> X-RateLimit-Reset: 1350085394
+> Content-Length: 5
+> Cache-Control: max-age=0, private, must-revalidate
+> X-Content-Type-Options: nosniff
+Blank fields are included as null instead of being omitted.
+
+All timestamps return in ISO 8601 format:
+
+YYYY-MM-DDTHH:MM:SSZ
+
+#########
+Example: When you get a list of repositories, you get the summary representation 
+of each repository. Here, we fetch the list of repositories 
+owned by the octokit organization:
+
+GET /orgs/octokit/repos
+
+Example: When you get an individual repository, you get the detailed representation of the repository. 
+Here, we fetch the octokit/octokit.rb repository:
+
+GET /repos/octokit/octokit.rb
+
+#########
+Authenticaton:::
+
+There are two ways to authenticate through GitHub REST API. 
+Requests that require authentication will return 404 Not Found, 
+instead of 403 Forbidden, in some places.
+
+GitHub will discontinue authentication to the API using query parameters. 
+Authenticating to the API should be done with HTTP basic authentication.
