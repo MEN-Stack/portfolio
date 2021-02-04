@@ -8,7 +8,7 @@
     <label for="user_email">Email:</label>
     <input type="email" name="user_email" id="user_email" required>
     <!-- messge(content) -->
-    <br><br>
+    <br>
     <label for="message">Message:</label><br>
     <textarea name="message" id="message" rows="10" cols="50">I would like to discuss...</textarea>
     <!-- submit  -->
