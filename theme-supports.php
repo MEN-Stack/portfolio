@@ -11,5 +11,6 @@
 // $args ex: 'height' => 480, 'width'  => 720,
 // code: add_theme_support( string $feature, mixed $args )
 
-// add_theme_support();
+add_theme_support('post-thumbnail');
+
 

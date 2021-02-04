@@ -20,3 +20,4 @@
 // ) );
 $features = array( 'excerpt', 'custom-fields');
 add_post_type_support('page', $features);
+add_post_type_support('projects', $features);
